@@ -4,10 +4,6 @@ def linear_regression(X, y):
     X = np.hstack((np.ones((X.shape[0], 1)), X))
     beta = np.linalg.inv(X.T.dot(X)).dot(X.T).dot(y)
     return beta
-def predict(X, beta):
-    X = np.hstack((np.ones((X.shape[0], 1)), X))
-    y_pred = X.dot(beta)
-    return y_pred
 california_housing = fetch_california_housing()
 X = california_housing.data  # Features
 y = california_housing.target  # Target variable
